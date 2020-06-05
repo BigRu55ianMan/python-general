@@ -12,34 +12,24 @@ primelist = []
 intlist = []
 print()
 
-def primecheck():
+if n % 2 == 0:
+    print (n, 'is not a prime number')
+else:
     while n % k != 0:
         primelist.append(k)
         k = k-1
+
     while z > 1:
         intlist.append(z)
         z = z-1
+
     primelist.sort()
     intlist.sort()
+
     if intlist == primelist:
         print(n, 'is a prime number')
     else:
         print(n, 'is not a prime number')
-
-if n % 2 == 0:
-    print(n, 'is not a prime number')
-elif n % 3 == 0:
-    print(n, 'is not a prime number')
-elif n % 7 == 0:
-    print(n, 'is not a prime number')
-elif n % 13 == 0:
-    print(n, 'is not a prime number')
-elif n % 17 == 0:
-    print(n, 'is not a prime number')
-elif n % 19 == 0:
-    print(n, 'is not a prime number')
-else:
-    primecheck()
 
 print()
 print('bye bye')

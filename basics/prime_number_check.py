@@ -36,10 +36,10 @@ elif n % 13 == 0:
     print(n, 'is not a prime number')
 elif n % 17 == 0:
     print(n, 'is not a prime number')
-elif n % 19:
+elif n % 19 == 0:
     print(n, 'is not a prime number')
 else:
-    intlist()
+    primecheck()
 
 print()
 print('bye bye')

@@ -10,23 +10,35 @@ k = n - 1
 z = n - 1
 primelist = []
 intlist = []
-print()
 
-while n % k != 0:
-    primelist.append(k)
-    k = k-1
+def primecheck():
+    while n % k != 0:
+        primelist.append(k)
+        k = k-1
+    while z > 1:
+        intlist.append(z)
+        z = z-1
+    primelist.sort()
+    intlist.sort()
+    if intlist == primelist:
+        print(n, 'is a prime number')
+    else:
+        print(n, 'is not a prime number')
 
-while z > 1:
-    intlist.append(z)
-    z = z-1
-
-primelist.sort()
-intlist.sort()
-
-if intlist == primelist:
-    print(n, 'is a prime number')
-else:
+if n % 2 == 0:
     print(n, 'is not a prime number')
+elif n % 3 == 0:
+    print(n, 'is not a prime number')
+elif n % 7 == 0:
+    print(n, 'is not a prime number')
+elif n % 13 == 0:
+    print(n, 'is not a prime number')
+elif n % 17 == 0:
+    print(n, 'is not a prime number')
+elif n % 19:
+    print(n, 'is not a prime number')
+else:
+    intlist()
 
 print()
 print('bye bye')

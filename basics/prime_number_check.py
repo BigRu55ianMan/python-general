@@ -10,6 +10,7 @@ k = n - 1
 z = n - 1
 primelist = []
 intlist = []
+print()
 
 def primecheck():
     while n % k != 0:
@@ -43,4 +44,3 @@ else:
 print()
 print('bye bye')
 print()
-#need to get rid of easy candidates like even and divisible by 3 5 7 etc

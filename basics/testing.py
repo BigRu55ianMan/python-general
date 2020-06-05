@@ -1,6 +1,6 @@
 none = None
 
-if none > -1:
-    print ('None is  greater than -1')
+if none is None:
+    print('none is none')
 else:
-    print('None is less than -1')
+    print('u dumfuc')

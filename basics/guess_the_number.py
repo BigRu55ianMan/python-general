@@ -30,7 +30,13 @@ print()
 
 for guessAttempts in range(0,5):
     guess = pyinputplus.inputNum('Please, take a guess: ')
-    if guess > rnum:
+    if guess < 1:
+        print(guess, 'is lower than 1')
+        print()
+    elif guess > 20:
+        print(guess, 'is greater than 20')
+        print()
+    elif guess > rnum:
         print('Unfortunately, your guess was too high')
         print()
     elif guess < rnum:

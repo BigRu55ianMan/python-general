@@ -4,15 +4,12 @@ options = ['rock', 'paper', 'scissors']
 cpuChoice = options[random.randint(0,2)]
 cpuNumber = options.index(cpuChoice)
 
-print()
-userChoice = input('Choose your option (rock, paper or scissors): ')
-print()
+userChoice = input('\nChoose your option (rock, paper or scissors): ')
 
 try:
     userNumber = options.index(userChoice)
 except:
-    print('Sorry', userChoice, 'is not a valid response, please try again.')
-    print()
+    print('\nSorry', userChoice, 'is not a valid response, please try again.')
     quit()
 
 if userNumber == cpuNumber:
@@ -26,6 +23,4 @@ elif userNumber < cpuNumber:
 elif userNumber > cpuNumber:
     print('Congratulations! Your', userChoice, 'beats my', cpuChoice + '.' )
 
-print()
-print('gg')
-print()
+print('\ngg\n')

@@ -8,7 +8,7 @@ print()
 
 rnum = random.randint(1, 20)
 name = input('Enter your name: ')
-print(rnum)
+
 
 print()
 

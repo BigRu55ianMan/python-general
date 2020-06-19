@@ -21,7 +21,12 @@ while True:
 
 
 for k in range(0, allowance):
-    choice = int(input('Please select a candy to add to your cart: '))
+    while True:
+        choice = int(input('Please select a candy to add to your cart: '))
+        if choice > 8 or choice < 0:
+            print('Sorry, the index you entered does not seem to exist in our database. Please try again. \n')
+        else:
+            break
     print(candy_list[choice], 'was added to your cart \n')
     candy_cart.append(candy_list[choice])
 

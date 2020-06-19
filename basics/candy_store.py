@@ -10,13 +10,13 @@ for i in candy_list:
 print()
 
 while True:
-    allowance = int(input('What is your allowance?\n'))
+    allowance = int(input('What is your allowance? '))
+    print()
     if allowance < 1:
-        print('Sorry, you cannot spend less than $1. Please try again.\n')
+        print('\nSorry, you cannot spend less than $1. Please try again.\n')
     else:
-        break
         print()
-
+        break
 
 for k in range(0, allowance):
     while True:

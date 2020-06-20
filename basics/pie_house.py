@@ -3,7 +3,7 @@ import pyinputplus
 pieList = ['Pecan', 'Apple Crisp', 'Bean', 'Banofee', 'Black Bun', 'Blueberry', 'Buko', 'Burek', 'Tamale', 'Chocolate']
 pieNum = [0] * len(pieList)
 welcome = '\nWelcome to the House of Pies! Here are our pies and their respective indexes:'
-theList = ', '.join('({}) {}'.format(index, element) for index, element in enumerate(pieList)) + '.\n'
+theList = ', '.join('({}) {}'.format(index + 1, element) for index, element in enumerate(pieList)) + '.\n'
 
 print(welcome)
 print('-' * (len(welcome)-1),'\n')
@@ -12,8 +12,8 @@ print(theList)
 while True:
     while True:
         userChoice = int(pyinputplus.inputInt('Please select your pie using the pie\'s index: '))
-        if userChoice > len(pieList) or userChoice < 1:
-            print('That index is not on the list, please try again.\n')
+        if userChoice < 1 or userChoice > len(pieList):
+            print(userChoice, 'is not a valid index. Please try again.\n')
         else:
             break
 

@@ -3,36 +3,26 @@ import pyinputplus
 pieList = ['Pecan', 'Apple Crisp', 'Bean', 'Banofee', 'Black Bun', 'Blueberry', 'Buko', 'Burek', 'Tamale', 'Chocolate']
 pieNum = [0] * len(pieList)
 welcome = '\nWelcome to the House of Pies! Here are our pies and their respective indexes:'
+theList = ', '.join('({}) {}'.format(index, element) for index, element in enumerate(pieList)) + '.\n'
 
 print(welcome)
 print('-' * (len(welcome)-1),'\n')
-
-for index, element in enumerate(pieList):
-    print('(' + str(index +1 ) + ')', str(element) + ', ', end='')
-
-print()
-print()
+print(theList)
 
 while True:
     while True:
-        userChoice = int(pyinputplus.inputInt('\nPlease select your pie using the pie\'s index: '))
+        userChoice = int(pyinputplus.inputInt('Please select your pie using the pie\'s index: '))
         if userChoice > len(pieList) or userChoice < 1:
             print('That index is not on the list, please try again.\n')
         else:
             break
 
     pieNum[userChoice - 1] += 1
-    print('Great! We\'ll have that ' + pieList[userChoice - 1] + ' pie right out for you.\n')
+    print('Great! We\'ll have that ' + pieList[userChoice - 1] + ' pie right out for you.')
     response = pyinputplus.inputYesNo('\nWould you like to make another order? ')
+    print()
     if response == 'no':
-        print()
         break
-    else:
-        print()
 
 print('Here is your final order: \n')
-
-for i in range(0, len(pieList)):
-    print(pieNum[i], pieList[i])
-
-print()
+print('\n'.join('{} {}'.format(index, element) for index, element in zip(pieNum, pieList)) + '\n')

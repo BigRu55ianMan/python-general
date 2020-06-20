@@ -2,6 +2,7 @@ import pyinputplus
 
 pieList = ['Pecan', 'Apple Crisp', 'Bean', 'Banofee', 'Black Bun', 'Blueberry', 'Buko', 'Burek', 'Tamale', 'Chocolate']
 pieNum = [0] * len(pieList)
+
 welcome = '\nWelcome to the House of Pies! Here are our pies and their respective indexes:'
 theList = ', '.join('({}) {}'.format(index + 1, element) for index, element in enumerate(pieList)) + '.'
 

@@ -2,6 +2,7 @@ import random
 import time
 import pyinputplus
 import pyperclip
+import re
 
 alphabet = ['A','a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e', 'F', 'f', 'G', 'g',
 'H', 'h', 'I', 'i', 'J', 'j', 'K', 'k', 'L', 'l', 'M' 'm', 'N', 'n', 'O', 'o',
@@ -36,11 +37,17 @@ def libraryRandomizer():
     for i in alphabet:
         listToken += str(alphabetS.index(i) + 10)
 
-def decryptor(listKey, messageKey):
+def decryptor(key):
     global alphabetD
     global messageD
+
+    listKey = key[:key.find('.')]
+    messageKey = key[key.find('.')+1:]
+
     m, l = 0, 0
     k, g = 2, 2
+
+    print(m,l,k,g)
 
     for i in range(int(len(listKey)/2)):
         alphabetD[int(listKey[l:g])-10] = alphabet[i]
@@ -59,9 +66,15 @@ def messageEncryptor(text):
 
 print(greeting)
 userinput = pyinputplus.inputChoice(choices, '\nWould you like to encrypt or decrypt? ')
-print(len(alphabet))
-if userinput == 'e' or 'encrypt' or 'encryption':
-    print('\n You have selected: Encryption.')
+
+if userinput == 'e' or userinput == 'encrypt' or userinput == 'encryption':
+    print('You have selected: Encryption.')
     libraryRandomizer()
+    messageEncryptor(input('\nPlease enter the text that you would like to Encript: '))
+    print('Fantastic. Your encryption code is: {}.{}\n\nYour code was also saved into your clipboard.\nThank you for using my services.\n'.format(listToken, messageToken))
+    pyperclip.copy('{}.{}'.format(listToken, messageToken))
 else:
-    print('decrypt')
+    print('You have selected: Decryption.')
+    userKey = input('\nPlease enter your key: ')
+    decryptor(userKey)
+    print('The decrypted message is:\n{}'.format(messageD))

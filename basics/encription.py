@@ -13,9 +13,7 @@ alphabetD = [0] * len(alphabet)
 
 messageToken = ''
 listToken = ''
-
-message = input('Please enter the message that you would like to encrypt: ')
-
+messageD = ''
 
 def libraryCheck(text):
     for i in text:
@@ -33,21 +31,26 @@ def libraryRandomizer():
     for i in alphabet:
         listToken += str(alphabetS.index(i) + 10)
 
+def decryptor(listKey, messageKey):
+    global alphabetD
+    global messageD
+    m, l = 0, 0
+    k, g = 2, 2
+
+    for i in range(int(len(listKey)/2)):
+        alphabetD[int(listKey[l:g])-10] = alphabet[i]
+        l += 2
+        g += 2
+
+    for i in range(int(len(messageKey)/2)):
+        messageD += alphabetD[int(messageKey[m:k])-10]
+        m += 2
+        k += 2
+
+    for i in range(int(len(messageKey)/2)):
+        messageD
+
 def messageEncryptor(text):
     global messageToken
     for i in text:
         messageToken += str(alphabetS.index(i) + 10)
-
-def libraryDeRandomizer(key):
-    global alphabetD
-    l = 0
-    g = 2
-
-    for i in range(int(len(key )/2)):
-        print(yuh[l:g])
-        l += 2
-        g += 2
-
-yuh = '122334455667788990'
-
-libraryDeRandomizer()

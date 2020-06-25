@@ -42,12 +42,12 @@ def decryptor(key):
     global messageD
 
     listKey = key[:key.find('.')]
+    print(listKey)
     messageKey = key[key.find('.')+1:]
+    print(messageKey)
 
     m, l = 0, 0
     k, g = 2, 2
-
-    print(m,l,k,g)
 
     for i in range(int(len(listKey)/2)):
         alphabetD[int(listKey[l:g])-10] = alphabet[i]

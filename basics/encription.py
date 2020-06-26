@@ -16,7 +16,7 @@ messageToken = ''
 listToken = ''
 messageD = ''
 
-greeting = '\nWelcome to the greatest, safest encryptor known to me!\nI provide two services: encryption and decryption.'
+greeting = '\nWelcome to the greatest and safest encryptor\decryptor ever known.\nI provide two services: encryption and decryption.'
 choices = ['decryption', 'decrypt', 'd', 'encrypt', 'encryption', 'e']
 
 def libraryCheck(text):
@@ -55,6 +55,14 @@ def decryptor(key):
         m += 2
         k += 2
 
+    print('\nChecking key.\n')
+    time.sleep(1)
+    print('Derandomizing libraries.\n')
+    time.sleep(1)
+    print('Generating message.\n')
+    time.sleep(1)
+    print('Your message is: {}'.format(messageD), '\n')
+
 def messageEncryptor(text):
     global messageToken
     for i in text:
@@ -69,8 +77,6 @@ def messageEncryptor(text):
     time.sleep(1)
     print('Your code is: {}.{}\n'.format(listToken, messageToken))
     print('Your encrypted message code has been saved to your clipboard. Do not loose it!\nThank you for using my services.\n')
-
-
 
 print(greeting)
 userinput = pyinputplus.inputChoice(choices, '\nWould you like to encrypt or decrypt a message? ')
